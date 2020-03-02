@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dbda30bf-187d-4bf7-8ef6-db13eedae330" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/fintrakcoreservice/GeneralService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GeneralService.wsdl" MetadataType="Wsdl" ID="55ec7375-5bf0-4323-9cdb-b2f0f39a0bad" SourceId="1" SourceUrl="http://localhost/fintrakcoreservice/GeneralService.svc?wsdl" />
+    <MetadataFile FileName="GeneralService.xsd" MetadataType="Schema" ID="e6e29817-04b1-40e5-9bdd-d91b489c3aed" SourceId="1" SourceUrl="http://localhost/fintrakcoreservice/GeneralService.svc?xsd=xsd5" />
+    <MetadataFile FileName="GeneralService1.xsd" MetadataType="Schema" ID="a81445a9-b816-4c26-bd2e-eef59ac337ca" SourceId="1" SourceUrl="http://localhost/fintrakcoreservice/GeneralService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GeneralService.disco" MetadataType="Disco" ID="f57cc1e1-a00b-4a98-8bb6-ab44974f8694" SourceId="1" SourceUrl="http://localhost/fintrakcoreservice/GeneralService.svc?disco" />
+    <MetadataFile FileName="GeneralService2.xsd" MetadataType="Schema" ID="ed473908-6d37-4c4c-a506-d11c6b5950a9" SourceId="1" SourceUrl="http://localhost/fintrakcoreservice/GeneralService.svc?xsd=xsd1" />
+    <MetadataFile FileName="GeneralService3.xsd" MetadataType="Schema" ID="33446824-0aa4-40db-89fb-5224bc1312f2" SourceId="1" SourceUrl="http://localhost/fintrakcoreservice/GeneralService.svc?xsd=xsd3" />
+    <MetadataFile FileName="GeneralService4.xsd" MetadataType="Schema" ID="5fbb0834-b59c-4deb-881a-d38e60a8a402" SourceId="1" SourceUrl="http://localhost/fintrakcoreservice/GeneralService.svc?xsd=xsd4" />
+    <MetadataFile FileName="GeneralService5.xsd" MetadataType="Schema" ID="10fda91c-3d8a-4269-8f43-db0d99fd8a88" SourceId="1" SourceUrl="http://localhost/fintrakcoreservice/GeneralService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

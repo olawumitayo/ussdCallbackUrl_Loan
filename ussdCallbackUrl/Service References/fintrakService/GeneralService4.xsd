@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FinTrakDAL" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FinTrakDAL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/fintrakcoreservice/GeneralService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+  <xs:complexType name="ArrayOfsp_Statement_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="sp_Statement_Result" nillable="true" type="tns:sp_Statement_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfsp_Statement_Result" nillable="true" type="tns:ArrayOfsp_Statement_Result" />
+  <xs:complexType name="sp_Statement_Result">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:ComplexObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AvailableAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="AvailableBalance" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Balance" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BrCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CCOResidence" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CEmployAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CEmployState" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CPEmail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CoyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreditAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CustCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DebitAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DoneBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LedgerBalance" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="LedgerBalance1" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="OpeningBalance" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PendingCredit" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PendingDebit" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PostDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ProductAcctNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TransactionDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UnclearedBalance" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Webbsite" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="company" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="coyID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="coyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="endBalance" type="xs:decimal" />
+          <xs:element minOccurs="0" name="kounter" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="sp_Statement_Result" nillable="true" type="tns:sp_Statement_Result" />
+</xs:schema>

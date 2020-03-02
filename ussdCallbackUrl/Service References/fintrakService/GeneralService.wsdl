@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GeneralService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/fintrakcoreservice/GeneralService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/fintrakcoreservice/GeneralService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/fintrakcoreservice/GeneralService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FinTrakLogic.Logic" />
+      <xsd:import schemaLocation="http://localhost/fintrakcoreservice/GeneralService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FinTrakServiceAPI" />
+      <xsd:import schemaLocation="http://localhost/fintrakcoreservice/GeneralService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FinTrakDAL" />
+      <xsd:import schemaLocation="http://localhost/fintrakcoreservice/GeneralService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGeneralService_GetChurchMapping_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChurchMapping" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetChurchMapping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChurchMappingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ListRemittanceAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListRemittanceAccount" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ListRemittanceAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListRemittanceAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_VerifyCustomerAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyCustomerAccount" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_VerifyCustomerAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyCustomerAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetCustomerBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerBalance" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetCustomerBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_isGLAccountValid_InputMessage">
+    <wsdl:part name="parameters" element="tns:isGLAccountValid" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_isGLAccountValid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isGLAccountValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_PostTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostTransactions" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_PostTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_PostRemittance_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostRemittance" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_PostRemittance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostRemittanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetCompanyName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyName" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetCompanyName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_StopCheque_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopCheque" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_StopCheque_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopChequeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ConfirmCheque_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmCheque" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ConfirmCheque_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmChequeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ChequeBookRequisition_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChequeBookRequisition" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ChequeBookRequisition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChequeBookRequisitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_isCustomerAccountValid_InputMessage">
+    <wsdl:part name="parameters" element="tns:isCustomerAccountValid" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_isCustomerAccountValid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isCustomerAccountValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetChartOfAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChartOfAccount" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetChartOfAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChartOfAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetCurrentSystemDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentSystemDate" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetCurrentSystemDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentSystemDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetTellersList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTellersList" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetTellersList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTellersListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetCustomeCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomeCode" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetCustomeCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomeCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_IsLoanAdded_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsLoanAdded" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_IsLoanAdded_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsLoanAddedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_CreateAccountOnline_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAccountOnline" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_CreateAccountOnline_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAccountOnlineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetCustomerDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetCustomerDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetCustomerDetailsForBeneficiary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerDetailsForBeneficiary" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetCustomerDetailsForBeneficiary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerDetailsForBeneficiaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetAllCustomerAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomerAccounts" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetAllCustomerAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomerAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GenerateStatement_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateStatement" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GenerateStatement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetAllDealsPerCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDealsPerCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetAllDealsPerCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDealsPerCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetDealInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDealInfo" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetDealInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDealInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetAllLoanProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLoanProducts" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetAllLoanProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLoanProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetCustomerLoanProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerLoanProducts" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetCustomerLoanProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerLoanProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetAllLoanSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLoanSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetAllLoanSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLoanScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetLoanScheduleMethod_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoanScheduleMethod" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetLoanScheduleMethod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoanScheduleMethodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetPaymentModes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentModes" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GetPaymentModes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentModesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_NIP_AmountFreeze_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIP_AmountFreeze" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_NIP_AmountFreeze_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIP_AmountFreezeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_NIP_AmountUnFreeze_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIP_AmountUnFreeze" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_NIP_AmountUnFreeze_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIP_AmountUnFreezeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_NIP_AccountFreeze_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIP_AccountFreeze" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_NIP_AccountFreeze_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIP_AccountFreezeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_NIP_AccountUnFreeze_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIP_AccountUnFreeze" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_NIP_AccountUnFreeze_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIP_AccountUnFreezeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_NIP_MandateAdvice_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIP_MandateAdvice" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_NIP_MandateAdvice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIP_MandateAdviceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGeneralService">
+    <wsdl:operation name="GetChurchMapping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetChurchMapping" message="tns:IGeneralService_GetChurchMapping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetChurchMappingResponse" message="tns:IGeneralService_GetChurchMapping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRemittanceAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ListRemittanceAccount" message="tns:IGeneralService_ListRemittanceAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ListRemittanceAccountResponse" message="tns:IGeneralService_ListRemittanceAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyCustomerAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/VerifyCustomerAccount" message="tns:IGeneralService_VerifyCustomerAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/VerifyCustomerAccountResponse" message="tns:IGeneralService_VerifyCustomerAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerBalance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetCustomerBalance" message="tns:IGeneralService_GetCustomerBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetCustomerBalanceResponse" message="tns:IGeneralService_GetCustomerBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isGLAccountValid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/isGLAccountValid" message="tns:IGeneralService_isGLAccountValid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/isGLAccountValidResponse" message="tns:IGeneralService_isGLAccountValid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostTransactions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/PostTransactions" message="tns:IGeneralService_PostTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/PostTransactionsResponse" message="tns:IGeneralService_PostTransactions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostRemittance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/PostRemittance" message="tns:IGeneralService_PostRemittance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/PostRemittanceResponse" message="tns:IGeneralService_PostRemittance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetCompanyName" message="tns:IGeneralService_GetCompanyName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetCompanyNameResponse" message="tns:IGeneralService_GetCompanyName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopCheque">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/StopCheque" message="tns:IGeneralService_StopCheque_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/StopChequeResponse" message="tns:IGeneralService_StopCheque_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmCheque">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ConfirmCheque" message="tns:IGeneralService_ConfirmCheque_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ConfirmChequeResponse" message="tns:IGeneralService_ConfirmCheque_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChequeBookRequisition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ChequeBookRequisition" message="tns:IGeneralService_ChequeBookRequisition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ChequeBookRequisitionResponse" message="tns:IGeneralService_ChequeBookRequisition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isCustomerAccountValid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/isCustomerAccountValid" message="tns:IGeneralService_isCustomerAccountValid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/isCustomerAccountValidResponse" message="tns:IGeneralService_isCustomerAccountValid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChartOfAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetChartOfAccount" message="tns:IGeneralService_GetChartOfAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetChartOfAccountResponse" message="tns:IGeneralService_GetChartOfAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentSystemDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetCurrentSystemDate" message="tns:IGeneralService_GetCurrentSystemDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetCurrentSystemDateResponse" message="tns:IGeneralService_GetCurrentSystemDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTellersList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetTellersList" message="tns:IGeneralService_GetTellersList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetTellersListResponse" message="tns:IGeneralService_GetTellersList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomeCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetCustomeCode" message="tns:IGeneralService_GetCustomeCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetCustomeCodeResponse" message="tns:IGeneralService_GetCustomeCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsLoanAdded">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/IsLoanAdded" message="tns:IGeneralService_IsLoanAdded_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/IsLoanAddedResponse" message="tns:IGeneralService_IsLoanAdded_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccountOnline">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/CreateAccountOnline" message="tns:IGeneralService_CreateAccountOnline_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/CreateAccountOnlineResponse" message="tns:IGeneralService_CreateAccountOnline_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetCustomerDetails" message="tns:IGeneralService_GetCustomerDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetCustomerDetailsResponse" message="tns:IGeneralService_GetCustomerDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetailsForBeneficiary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetCustomerDetailsForBeneficiary" message="tns:IGeneralService_GetCustomerDetailsForBeneficiary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetCustomerDetailsForBeneficiaryResponse" message="tns:IGeneralService_GetCustomerDetailsForBeneficiary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerAccounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetAllCustomerAccounts" message="tns:IGeneralService_GetAllCustomerAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetAllCustomerAccountsResponse" message="tns:IGeneralService_GetAllCustomerAccounts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateStatement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GenerateStatement" message="tns:IGeneralService_GenerateStatement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GenerateStatementResponse" message="tns:IGeneralService_GenerateStatement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDealsPerCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetAllDealsPerCustomer" message="tns:IGeneralService_GetAllDealsPerCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetAllDealsPerCustomerResponse" message="tns:IGeneralService_GetAllDealsPerCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDealInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetDealInfo" message="tns:IGeneralService_GetDealInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetDealInfoResponse" message="tns:IGeneralService_GetDealInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLoanProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetAllLoanProducts" message="tns:IGeneralService_GetAllLoanProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetAllLoanProductsResponse" message="tns:IGeneralService_GetAllLoanProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerLoanProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetCustomerLoanProducts" message="tns:IGeneralService_GetCustomerLoanProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetCustomerLoanProductsResponse" message="tns:IGeneralService_GetCustomerLoanProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLoanSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetAllLoanSchedule" message="tns:IGeneralService_GetAllLoanSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetAllLoanScheduleResponse" message="tns:IGeneralService_GetAllLoanSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanScheduleMethod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetLoanScheduleMethod" message="tns:IGeneralService_GetLoanScheduleMethod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetLoanScheduleMethodResponse" message="tns:IGeneralService_GetLoanScheduleMethod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentModes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GetPaymentModes" message="tns:IGeneralService_GetPaymentModes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GetPaymentModesResponse" message="tns:IGeneralService_GetPaymentModes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIP_AmountFreeze">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/NIP_AmountFreeze" message="tns:IGeneralService_NIP_AmountFreeze_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/NIP_AmountFreezeResponse" message="tns:IGeneralService_NIP_AmountFreeze_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIP_AmountUnFreeze">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/NIP_AmountUnFreeze" message="tns:IGeneralService_NIP_AmountUnFreeze_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/NIP_AmountUnFreezeResponse" message="tns:IGeneralService_NIP_AmountUnFreeze_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIP_AccountFreeze">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/NIP_AccountFreeze" message="tns:IGeneralService_NIP_AccountFreeze_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/NIP_AccountFreezeResponse" message="tns:IGeneralService_NIP_AccountFreeze_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIP_AccountUnFreeze">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/NIP_AccountUnFreeze" message="tns:IGeneralService_NIP_AccountUnFreeze_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/NIP_AccountUnFreezeResponse" message="tns:IGeneralService_NIP_AccountUnFreeze_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIP_MandateAdvice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/NIP_MandateAdvice" message="tns:IGeneralService_NIP_MandateAdvice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/NIP_MandateAdviceResponse" message="tns:IGeneralService_NIP_MandateAdvice_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IGeneralService" type="tns:IGeneralService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetChurchMapping">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetChurchMapping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRemittanceAccount">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/ListRemittanceAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyCustomerAccount">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/VerifyCustomerAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerBalance">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetCustomerBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isGLAccountValid">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/isGLAccountValid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostTransactions">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/PostTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostRemittance">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/PostRemittance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyName">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetCompanyName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopCheque">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/StopCheque" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmCheque">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/ConfirmCheque" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChequeBookRequisition">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/ChequeBookRequisition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCustomerAccountValid">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/isCustomerAccountValid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChartOfAccount">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetChartOfAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentSystemDate">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetCurrentSystemDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTellersList">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetTellersList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomeCode">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetCustomeCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsLoanAdded">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/IsLoanAdded" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccountOnline">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/CreateAccountOnline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetailsForBeneficiary">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetCustomerDetailsForBeneficiary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerAccounts">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetAllCustomerAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateStatement">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GenerateStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDealsPerCustomer">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetAllDealsPerCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDealInfo">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetDealInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLoanProducts">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetAllLoanProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerLoanProducts">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetCustomerLoanProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLoanSchedule">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetAllLoanSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanScheduleMethod">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetLoanScheduleMethod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentModes">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/GetPaymentModes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NIP_AmountFreeze">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/NIP_AmountFreeze" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NIP_AmountUnFreeze">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/NIP_AmountUnFreeze" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NIP_AccountFreeze">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/NIP_AccountFreeze" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NIP_AccountUnFreeze">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/NIP_AccountUnFreeze" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NIP_MandateAdvice">
+      <soap:operation soapAction="http://tempuri.org/IGeneralService/NIP_MandateAdvice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GeneralService">
+    <wsdl:port name="BasicHttpBinding_IGeneralService" binding="tns:BasicHttpBinding_IGeneralService">
+      <soap:address location="http://localhost/fintrakcoreservice/GeneralService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
